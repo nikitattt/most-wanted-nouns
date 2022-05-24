@@ -13,14 +13,120 @@ const Home: NextPage<{ nounsData: string }> = (props) => {
   // TODO: exact cast doesn't happen with '234.56' to number
   const data: Noun[] = JSON.parse(nounsData)
 
+  // TODO: update links after moving to custom domain
   return (
     <div className="font-sans bg-background text-black-text flex flex-col min-h-screen">
       <Head>
         <title>Most Wanted Nouns</title>
-        <meta name="description" content="Most Wanted Nouns" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
 
+        <meta name="title" content="Most Wanted Nouns" />
+        <meta
+          name="description"
+          content="What nouns have drained ETH and USD bags the most."
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://mostwantednouns.netlify.app" />
+        <meta property="og:title" content="Most Wanted Nouns" />
+        <meta
+          property="og:description"
+          content="What nouns have drained ETH and USD bags the most."
+        />
+        <meta
+          property="og:image"
+          content="https://mostwantednouns.netlify.app/share_image.png"
+        />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content="https://mostwantednouns.netlify.app"
+        />
+        <meta property="twitter:title" content="Most Wanted Nouns" />
+        <meta
+          property="twitter:description"
+          content="What nouns have drained ETH and USD bags the most."
+        />
+        <meta
+          property="twitter:image"
+          content="https://mostwantednouns.netlify.app/share_image.png"
+        />
+
+        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          sizes="57x57"
+          href="/apple-icon-57x57.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="60x60"
+          href="/apple-icon-60x60.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="72x72"
+          href="/apple-icon-72x72.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="76x76"
+          href="/apple-icon-76x76.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="114x114"
+          href="/apple-icon-114x114.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="120x120"
+          href="/apple-icon-120x120.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="144x144"
+          href="/apple-icon-144x144.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="152x152"
+          href="/apple-icon-152x152.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-icon-180x180.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="192x192"
+          href="/android-icon-192x192.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="96x96"
+          href="/favicon-96x96.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="msapplication-TileColor" content="#F2F2F2" />
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+        <meta name="theme-color" content="#F2F2F2" />
+      </Head>
       <main className="mt-20">
         <div className="flex flex-col lg:flex-row ml-8 sm:ml-20 gap-6 font-display items-start lg:items-end">
           <p className="text-8xl text-red font-bold">Most Wanted Nouns</p>
@@ -39,7 +145,6 @@ const Home: NextPage<{ nounsData: string }> = (props) => {
         <Selectors />
         <List data={data} />
       </main>
-
       <footer></footer>
     </div>
   )
