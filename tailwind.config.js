@@ -1,8 +1,17 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}'
+  ],
   theme: {
+    extend: {
+      screens: {
+        xl: '1400px',
+        '2xl': '1600px'
+      }
+    },
     fontFamily: {
       sans: ['Inter', 'sans-serif'],
       display: ['Londrina Solid', 'cursive']
@@ -50,4 +59,4 @@ module.exports = {
     extend: {}
   },
   plugins: []
-};
+}
