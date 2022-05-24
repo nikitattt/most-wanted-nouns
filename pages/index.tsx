@@ -5,8 +5,6 @@ import { Noun } from '../utils/types'
 import List from '../components/List'
 import Selectors from '../components/Selectors'
 
-const prisma = new PrismaClient()
-
 const Home: NextPage<{ nounsData: string }> = (props) => {
   const { nounsData } = props
 
@@ -160,6 +158,8 @@ const Home: NextPage<{ nounsData: string }> = (props) => {
 // thousands of data point will be too heavy and it'll worth moving to
 // partial data preloading
 export const getStaticProps: GetStaticProps = async (context) => {
+  const prisma = new PrismaClient()
+
   const result = await prisma.noun.findMany({
     include: {
       seed: true
