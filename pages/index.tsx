@@ -22,9 +22,9 @@ const Home: NextPage<{ nounsData: string }> = (props) => {
       </Head>
 
       <main className="mt-20">
-        <div className="flex flex-row ml-20 font-display items-end">
+        <div className="flex flex-col lg:flex-row ml-8 sm:ml-20 gap-6 font-display items-start lg:items-end">
           <p className="text-8xl text-red font-bold">Most Wanted Nouns</p>
-          <p className="ml-6 text-5xl pb-2 text-grey">
+          <p className="text-5xl pb-2 text-grey">
             by:{' '}
             <a
               className="text-blue underline underline-offset-4 decoration-4 decoration-blue hover:decoration-red"

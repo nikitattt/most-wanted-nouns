@@ -36,15 +36,18 @@ const List: React.FC<{ data: Noun[] }> = (props) => {
           .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 
         return (
-          <div key={place} className="mb-8 flex flex-row gap-x-6">
-            <div className="w-32 text-right my-auto">
+          <div
+            key={place}
+            className=" w-full mb-8 flex flex-col lg:flex-row text-center lg:text-left items-center gap-6"
+          >
+            <div className="w-32 text-center lg:text-right my-auto">
               <p className="font-display font-bold text-7xl text-black-text">
                 {place + 1}
               </p>
             </div>
             <NounImage seed={noun.seed} />
             <div className="flex flex-col justify-center gap-y-4">
-              <div className="flex flex-row">
+              <div className="flex flex-col lg:flex-row items-center">
                 <div className="w-64">
                   <p className="font-display font-bold text-7xl text-black-text">
                     Noun {noun.id}
@@ -52,7 +55,7 @@ const List: React.FC<{ data: Noun[] }> = (props) => {
                 </div>
                 <Winner address={noun.winner} />
               </div>
-              <div className="flex flex-row font-black text-5xl text-black-text">
+              <div className="flex flex-col lg:flex-row items-center font-black text-5xl text-black-text">
                 <div className="w-64">
                   <p className="text-blue">Ξ {noun.winningBid}</p>
                 </div>

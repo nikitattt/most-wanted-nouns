@@ -4,9 +4,9 @@ import OrderSelector from '../OrderSelector'
 
 const Selectors: React.FC<{}> = (props) => {
   return (
-    <div className="mt-20 mx-20 flex flex-col gap-6">
+    <div className="mt-20 ml-8 mr-0 sm:ml-20 flex flex-col gap-6">
       <p className="font-display font-bold text-5xl text-grey">Sort by:</p>
-      <div className="flex flex-row gap-4">
+      <div className="flex flex-row overflow-scroll gap-4">
         <OrderSelector order={Order.desc} />
         <OrderSelector order={Order.asc} />
         <div className="w-6" />

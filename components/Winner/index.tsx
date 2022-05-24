@@ -16,7 +16,7 @@ const Winner: React.FC<{ address: string }> = (props) => {
   const etherscanLink = `https://etherscan.io/address/${address}`
 
   return (
-    <div className="self-end pb-1">
+    <div className="self-center lg:self-end pb-1">
       <p className="font-display font-bold text-4xl text-grey">
         Winner:{' '}
         <a
