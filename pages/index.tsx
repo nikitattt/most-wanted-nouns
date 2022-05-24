@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { PrismaClient } from '@prisma/client'
 import { Noun } from '../utils/types'
 import List from '../components/List'
+import Selectors from '../components/Selectors'
 
 const prisma = new PrismaClient()
 
@@ -35,6 +36,7 @@ const Home: NextPage<{ nounsData: string }> = (props) => {
             </a>
           </p>
         </div>
+        <Selectors />
         <List data={data} />
       </main>
 
