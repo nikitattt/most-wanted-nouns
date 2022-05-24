@@ -59,6 +59,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     include: {
       seed: true
     }
+    // take: 20
   })
 
   const nounsData = JSON.stringify(result)

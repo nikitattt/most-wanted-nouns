@@ -21,8 +21,10 @@ const OrderSelector: React.FC<{ order: Order }> = (props) => {
     <button
       onClick={select}
       className={clsx(
-        'px-8 py-2 bg-opacity-20 rounded-full',
-        selected ? 'text-green bg-green' : 'text-blue bg-blue'
+        'px-8 py-2 rounded-full',
+        selected
+          ? 'text-green bg-green bg-opacity-30'
+          : 'text-blue bg-blue bg-opacity-20'
       )}
     >
       <p className="font-display font-bold text-2xl">{orderToText[order]}</p>
