@@ -23,8 +23,12 @@ const CurrencySelector: React.FC<{ currency: Currency }> = (props) => {
       className={clsx(
         'px-8 py-2 rounded-full',
         selected
-          ? 'text-green bg-green bg-opacity-30'
-          : 'text-blue bg-blue bg-opacity-20'
+          ? currency === Currency.eth
+            ? 'text-background bg-blue'
+            : 'text-background bg-green'
+          : currency === Currency.eth
+          ? 'text-blue bg-blue bg-opacity-20'
+          : 'text-green bg-green bg-opacity-30'
       )}
     >
       <p className="font-display font-bold text-2xl">
