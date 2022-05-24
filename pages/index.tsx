@@ -1,13 +1,16 @@
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import { PrismaClient } from '@prisma/client'
+import { Noun } from '../utils/types'
+import List from '../components/List'
 
 const prisma = new PrismaClient()
 
 const Home: NextPage<{ nounsData: string }> = (props) => {
   const { nounsData } = props
 
-  const data = JSON.parse(nounsData)
+  // TODO: exact cast doesn't happen with '234.56' to number
+  const data: Noun[] = JSON.parse(nounsData)
 
   return (
     <div className="font-sans bg-background text-black-text flex flex-col min-h-screen">
@@ -32,6 +35,7 @@ const Home: NextPage<{ nounsData: string }> = (props) => {
             </a>
           </p>
         </div>
+        <List data={data} />
       </main>
 
       <footer></footer>

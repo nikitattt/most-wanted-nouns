@@ -97,7 +97,7 @@
     "@ethersproject/bytes" "^5.6.0"
     "@ethersproject/properties" "^5.6.0"
 
-"@ethersproject/bignumber@5.6.1", "@ethersproject/bignumber@^5.6.0":
+"@ethersproject/bignumber@5.6.1", "@ethersproject/bignumber@^5.5.0", "@ethersproject/bignumber@^5.6.0":
   version "5.6.1"
   resolved "https://registry.yarnpkg.com/@ethersproject/bignumber/-/bignumber-5.6.1.tgz#d5e0da518eb82ab8d08ca9db501888bbf5f0c8fb"
   integrity sha512-UtMeZ3GaUuF9sx2u9nPZiPP3ULcAFmXyvynR7oHl/tPrM+vldZh7ocMsoa1PqKYGnQnqUZJoqxZnGN6J0qdipA==
@@ -285,7 +285,7 @@
     elliptic "6.5.4"
     hash.js "1.1.7"
 
-"@ethersproject/solidity@5.6.0":
+"@ethersproject/solidity@5.6.0", "@ethersproject/solidity@^5.5.0":
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/@ethersproject/solidity/-/solidity-5.6.0.tgz#64657362a596bf7f5630bdc921c07dd78df06dc3"
   integrity sha512-YwF52vTNd50kjDzqKaoNNbC/r9kMDPq3YzDWmsjFTRBcIF1y4JCQJ8gB30wsTfHbaxgxelI5BfxQSxD/PbJOww==
@@ -479,6 +479,29 @@
   dependencies:
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
+
+"@nouns/assets@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@nouns/assets/-/assets-0.2.0.tgz#556be65037e8c3db28d64f6cf245b80d04ae4f03"
+  integrity sha512-LwMY4HLFmyVsF4Qw5SxKTs/B3c1clrGzPzIvtcGWMIae41mS587PPkQ0I7siAInZZ9wgQKe1DRGhXA/p5/nAqA==
+  dependencies:
+    "@ethersproject/bignumber" "^5.5.0"
+    "@ethersproject/solidity" "^5.5.0"
+
+"@nouns/contracts@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@nouns/contracts/-/contracts-0.1.3.tgz#9321e854a018cd4eb2e50201f69746760655c262"
+  integrity sha512-OrsgbXhFdoQqVXjscG4Y7e11i6RgvZb1fTd9O5RVr1MUR/1V9iqbCf3rMuZeLdHEqkh96309OnMCFq7V3vjq0g==
+  dependencies:
+    ethers "^5.4.7"
+
+"@nouns/sdk@^0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@nouns/sdk/-/sdk-0.1.6.tgz#ad9ad08a5aff282dadb5884bf54fc7ec0e1ebaca"
+  integrity sha512-5Kx9nfRURSrjErA2EM8jZ74VfSvE00d1z0FAKKrL7KtMoKDXKMngeF8rWtUeqUhOqHW4tAv4cKzZGbOSe9Vstw==
+  dependencies:
+    "@nouns/contracts" "^0.1.3"
+    ethers "^5.4.7"
 
 "@prisma/client@^3.14.0":
   version "3.14.0"
@@ -1260,7 +1283,7 @@ esutils@^2.0.2:
   resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.3.tgz#74d2eb4de0b8da1293711910d50775b9b710ef64"
   integrity sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==
 
-ethers@^5.6.7:
+ethers@^5.4.7, ethers@^5.6.7:
   version "5.6.7"
   resolved "https://registry.yarnpkg.com/ethers/-/ethers-5.6.7.tgz#3e6257b2a0fdd5fc93e68e141cf2b9761900f374"
   integrity sha512-Q8pmMraUENK0cY6cy6IvIe3e9xL/+4kBvxmUvLXg1O7Abob0c7XzWI76E29j5em/HxWMl5hYiSClmOMW3jJmdg==
