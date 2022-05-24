@@ -1,10 +1,27 @@
+import { Currency, Order, State, useStore } from '../../state/state'
 import { Noun } from '../../utils/types'
 import NounImage from '../NounImage'
 
 const List: React.FC<{ data: Noun[] }> = (props) => {
   const { data } = props
 
-  data.sort((x, y) => y.winningBid - x.winningBid)
+  const order = useStore((state: State) => state.order)
+  const currency = useStore((state: State) => state.currency)
+
+  // TODO: make something nicer
+  if (order === Order.desc) {
+    if (currency == Currency.eth) {
+      data.sort((x, y) => y.winningBid - x.winningBid)
+    } else {
+      data.sort((x, y) => y.winningBidUsd - x.winningBidUsd)
+    }
+  } else {
+    if (currency == Currency.eth) {
+      data.sort((x, y) => x.winningBid - y.winningBid)
+    } else {
+      data.sort((x, y) => x.winningBidUsd - y.winningBidUsd)
+    }
+  }
 
   return (
     <div className="mt-20 mx-8 sm:mx-20">

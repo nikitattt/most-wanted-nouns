@@ -1,9 +1,5 @@
 import clsx from 'clsx'
-
-export enum Order {
-  desc,
-  asc
-}
+import { Order, State, useStore } from '../../state/state'
 
 const orderToText: Record<Order, string> = {
   [Order.asc]: 'COST DOWN',
@@ -13,11 +9,17 @@ const orderToText: Record<Order, string> = {
 const OrderSelector: React.FC<{ order: Order }> = (props) => {
   const { order } = props
 
-  const selected = false
+  const stateOrder = useStore((state: State) => state.order)
+
+  const selected = stateOrder === order
+
+  const select = useStore((state: State) =>
+    order === Order.asc ? state.setAscOrder : state.setDescOrder
+  )
 
   return (
     <button
-      onClick={() => {}}
+      onClick={select}
       className={clsx(
         'px-8 py-2 bg-opacity-20 rounded-full',
         selected ? 'text-green bg-green' : 'text-blue bg-blue'
