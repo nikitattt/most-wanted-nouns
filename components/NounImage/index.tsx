@@ -14,7 +14,7 @@ const NounImage: React.FC<{ seed: Seed }> = (props) => {
   const svgBase64 = Buffer.from(svgBinary).toString('base64')
 
   return (
-    <div className="w-40 h-40">
+    <div className="w-48 h-48">
       <img
         className="rounded-2xl"
         src={`data:image/svg+xml;base64,${svgBase64}`}
