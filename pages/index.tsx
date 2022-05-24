@@ -1,13 +1,13 @@
-import type { GetStaticProps, NextPage } from 'next';
-import Head from 'next/head';
-import { PrismaClient } from '@prisma/client';
+import type { GetStaticProps, NextPage } from 'next'
+import Head from 'next/head'
+import { PrismaClient } from '@prisma/client'
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient()
 
 const Home: NextPage<{ nounsData: string }> = (props) => {
-  const { nounsData } = props;
+  const { nounsData } = props
 
-  const data = JSON.parse(nounsData);
+  const data = JSON.parse(nounsData)
 
   return (
     <div className="font-sans bg-background text-black-text flex flex-col min-h-screen">
@@ -36,8 +36,8 @@ const Home: NextPage<{ nounsData: string }> = (props) => {
 
       <footer></footer>
     </div>
-  );
-};
+  )
+}
 
 // This function gets called at build time on server-side.
 // It won't be called on client-side.
@@ -53,15 +53,15 @@ export const getStaticProps: GetStaticProps = async (context) => {
     include: {
       seed: true
     }
-  });
+  })
 
-  const nounsData = JSON.stringify(result);
+  const nounsData = JSON.stringify(result)
 
   return {
     props: {
       nounsData
     }
-  };
-};
+  }
+}
 
-export default Home;
+export default Home
