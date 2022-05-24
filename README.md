@@ -2,7 +2,12 @@
 
 ## Stack
 
-This website is built with React framework Next(SSG), TailwindCSS(styling), Prisma(ORM), Netlify Functions
+This website is built with React framework Next(SSG), TailwindCSS(styling), Prisma(ORM), wagmi(ENS), Netlify Functions
+
+Uses:
+
+- PlanetScale for MySQL database
+- Alchemy provider for accessing blockchain data
 
 ## Getting Started
 
@@ -26,7 +31,17 @@ Make sure to run:
 
 3. `node scripts/initialize.js <id of the latest auctioning noun>` to populate db with the latest data. You need to call this only once. Make sure that you pass `id` of the last auctioning noun. Get it here: [nouns.wtf](https://nonouns.wtf). This function uses `api.thegraph.com` for loading nouns data from blockchain and `api.coinbase.com/v2` for loading ETH-USD rates.
 
-Then, run the development server:
+### ENS Names
+
+Then rename `.env.local.example` file to `.env.local` and update `ALCHEMY_ID` in it:
+
+```bash
+ALCHEMY_ID=<your alchemy id here>
+```
+
+This is needed to resole ENS domain names and show them instead of barebone addresses.
+
+Then, you can run it locally on development server:
 
 ```bash
 npm run dev
