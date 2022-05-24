@@ -24,10 +24,10 @@ const Home: NextPage<{ nounsData: string }> = (props) => {
       <main className="mt-20">
         <div className="flex flex-row ml-20 font-display items-end">
           <p className="text-8xl text-red font-bold">Most Wanted Nouns</p>
-          <p className="ml-6 text-5xl pb-2 text-black-text">
+          <p className="ml-6 text-5xl pb-2 text-grey">
             by:{' '}
             <a
-              className="text-black-text underline underline-offset-4 decoration-4 decoration-red hover:text-red"
+              className="text-blue underline underline-offset-4 decoration-4 decoration-blue hover:decoration-red"
               target="_blank"
               rel="noreferrer"
               href="https://twitter.com/nikitago_"

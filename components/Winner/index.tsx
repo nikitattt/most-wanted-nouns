@@ -20,7 +20,7 @@ const Winner: React.FC<{ address: string }> = (props) => {
       <p className="font-display font-bold text-4xl text-grey">
         Winner:{' '}
         <a
-          className="text-blue"
+          className="text-blue hover:underline decoration-4 decoration-red"
           target="_blank"
           rel="noreferrer"
           href={etherscanLink}
