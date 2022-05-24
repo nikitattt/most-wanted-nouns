@@ -1,6 +1,11 @@
+import dynamic from 'next/dynamic'
 import { Currency, Order, State, useStore } from '../../state/state'
 import { Noun } from '../../utils/types'
 import NounImage from '../NounImage'
+
+const Winner = dynamic(() => import('../Winner'), {
+  ssr: false
+})
 
 const List: React.FC<{ data: Noun[] }> = (props) => {
   const { data } = props
@@ -31,7 +36,7 @@ const List: React.FC<{ data: Noun[] }> = (props) => {
           .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 
         return (
-          <div className="mb-8 flex flex-row gap-x-6">
+          <div key={place} className="mb-8 flex flex-row gap-x-6">
             <div className="w-32 text-right my-auto">
               <p className="font-display font-bold text-7xl text-black-text">
                 {place + 1}
@@ -39,9 +44,14 @@ const List: React.FC<{ data: Noun[] }> = (props) => {
             </div>
             <NounImage seed={noun.seed} />
             <div className="flex flex-col justify-center gap-y-4">
-              <p className="font-display font-bold text-7xl text-black-text">
-                Noun {noun.id}
-              </p>
+              <div className="flex flex-row">
+                <div className="w-64">
+                  <p className="font-display font-bold text-7xl text-black-text">
+                    Noun {noun.id}
+                  </p>
+                </div>
+                <Winner address={noun.winner} />
+              </div>
               <div className="flex flex-row font-black text-5xl text-black-text">
                 <div className="w-64">
                   <p className="text-blue">Ξ {noun.winningBid}</p>
